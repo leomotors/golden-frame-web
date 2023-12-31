@@ -14,6 +14,11 @@ if os.environ.get("ALLOW_CORS") is not None:
     cors = CORS(app, origins=["http://localhost:4321"])
 
 
+@app.route("/", methods=["GET"])
+def get_index():
+    return app.send_static_file("index.html")
+
+
 @app.route("/api", methods=["GET"])
 def get_frames():
     return frames_info, 200
