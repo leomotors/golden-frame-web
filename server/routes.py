@@ -1,4 +1,5 @@
 import io
+import os
 
 from flask import request, Response
 import cv2
@@ -7,8 +8,13 @@ import numpy as np
 from app import app, limiter
 from lib import build_golden_frame, frames_info
 
+if os.environ.get("ALLOW_CORS") is not None:
+    print("WARNING: CORS is enabled")
+    from flask_cors import CORS
+    cors = CORS(app, origins=["http://localhost:4321"])
 
-@app.route("/", methods=["GET"])
+
+@app.route("/api", methods=["GET"])
 def get_frames():
     return frames_info, 200
 
@@ -22,7 +28,7 @@ ALLOWED_FILE_TYPES = set(
     ["image/jpeg", "image/png", "image/webp", "image/avif"])
 
 
-@app.route("/", methods=["POST"])
+@app.route("/api", methods=["POST"])
 @limiter.limit("1/second")
 def handle_post():
     # * Get files

@@ -10,6 +10,7 @@ const config = {
   printWidth: 80,
   plugins: [
     "prettier-plugin-astro",
+    "prettier-plugin-svelte",
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss",
   ],
@@ -18,6 +19,12 @@ const config = {
       files: "*.astro",
       options: {
         parser: "astro",
+      },
+    },
+    {
+      files: "*.svelte",
+      options: {
+        parser: "svelte",
       },
     },
   ],

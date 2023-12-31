@@ -5,4 +5,4 @@ password_is_ok = True
 
 if PASSWORD is None or len(PASSWORD) < 6:
     password_is_ok = False
-    print("WARN: PASSWORD environment variable is not set or too weak! All health check will be logged")
+    print("WARNING: PASSWORD environment variable is not set or too weak! All health check will be logged")

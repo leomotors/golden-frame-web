@@ -12,8 +12,9 @@
     "astro": "astro",
     "lint": "prettier --check src && eslint src",
     "format": "prettier --write src && eslint src --fix",
-    "dev:server": "DEV=1 poetry run python3 server/server.py",
-    "preview:server": "poetry run python3 server/server.py"
+    "gen": "poetry run python3 static.py",
+    "dev:server": "DEV=1 ALLOW_CORS=1 poetry run python3 server/server.py",
+    "preview:server": "ALLOW_CORS=1 poetry run python3 server/server.py"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
@@ -34,6 +35,7 @@
     "prettier": "^3.1.1",
     "prettier-plugin-astro": "^0.12.3",
     "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-svelte": "^3.1.2",
     "prettier-plugin-tailwindcss": "^0.5.10"
   }
 }

@@ -95,3 +95,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Generate Files
+public/frames
+*.g.*

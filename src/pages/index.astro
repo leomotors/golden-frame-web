@@ -1,9 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import GoldenFrame from "../components/GoldenFrame.svelte";
 ---
 
 <Layout title="Golden Frame" description='Golden Frame "กรอบทอง" Generator'>
-  <main>
-    <h1 class="text-3xl">Hello Asstro</h1>
+  <main class="flex flex-col items-center gap-4 py-8">
+    <h1 class="text-3xl font-bold">🖼️ Golden Frame</h1>
+
+    <GoldenFrame client:load />
   </main>
 </Layout>

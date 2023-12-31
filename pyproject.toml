@@ -17,6 +17,7 @@ flask-limiter = { extras = ["memcached"], version = "^3.5.0" }
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.4"
+flask-cors = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core"]
