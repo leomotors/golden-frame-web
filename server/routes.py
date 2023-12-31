@@ -29,7 +29,7 @@ ALLOWED_FILE_TYPES = set(
 
 
 @app.route("/api", methods=["POST"])
-@limiter.limit("1/second")
+@limiter.limit("5 per 5 second")
 def handle_post():
     # * Get files
     if "file" not in request.files:
