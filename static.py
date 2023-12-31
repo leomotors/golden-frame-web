@@ -8,6 +8,7 @@ from golden_frame.lib import ASSET_PATH, list_frames
 
 frames = list_frames()
 
+os.makedirs("src", exist_ok=True)
 os.system("rm -rf public/frames && mkdir -p public/frames")
 
 for frame in frames:
