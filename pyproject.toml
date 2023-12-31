@@ -2,7 +2,9 @@
 name = "golden-frame-web"
 version = "3.0.0"
 description = "Golden Frame Generator Website"
-authors = ["Nutthapat Pongtanyavichai <59821765+Leomotors@users.noreply.github.com>"]
+authors = [
+  "Nutthapat Pongtanyavichai <59821765+Leomotors@users.noreply.github.com>",
+]
 license = "MIT"
 readme = "README.md"
 
@@ -11,6 +13,7 @@ python = "^3.11"
 golden-frame = "^2.0.69"
 Flask = "^3.0.0"
 waitress = "^2.1.2"
+flask-limiter = {extras = ["memcached"], version = "^3.5.0"}
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.4"
