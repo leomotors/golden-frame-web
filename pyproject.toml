@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "golden-frame-web"
+version = "3.0.0"
+description = "Golden Frame Generator Website"
+authors = ["Nutthapat Pongtanyavichai <59821765+Leomotors@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+golden-frame = "^2.0.69"
+Flask = "^3.0.0"
+waitress = "^2.1.2"
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
