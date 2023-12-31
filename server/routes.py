@@ -5,12 +5,12 @@ import cv2
 import numpy as np
 
 from app import app, limiter
-from lib import build_golden_frame, list_frame_json
+from lib import build_golden_frame, frames_info
 
 
 @app.route("/", methods=["GET"])
 def get_frames():
-    return list_frame_json(), 200
+    return frames_info, 200
 
 
 @app.route("/health", methods=["GET"])
@@ -44,7 +44,7 @@ def handle_post():
     if frame_name is None:
         return "No frame name selected", 400
 
-    if not any(map(lambda x: x["name"] == frame_name, list_frame_json())):
+    if not any(map(lambda x: x.name == frame_name, frames_info)):
         return "Invalid frame name", 400
 
     # * Get resolution option

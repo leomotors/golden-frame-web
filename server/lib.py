@@ -1,4 +1,5 @@
 import os
+import time
 
 import cv2
 import numpy as np
@@ -24,22 +25,4 @@ def build_golden_frame(frame_name: str, input_image: np.ndarray, res: int, crop:
     return out_image
 
 
-def line_to_json(line: str):
-    tokens = line.split(":")
-    name = ":".join(tokens[:2]).strip()
-    name_tokens = name.split(" ")
-    description = tokens[2].strip()
-
-    return {
-        "name": name_tokens[0].strip(),
-        "description": description,
-        "ratio": float(name_tokens[1].strip()[1:].split(":")[0])
-    }
-
-
-def list_frame_json():
-    frames = list_frames()
-    items = list(map(line_to_json, filter(
-        lambda x: len(x), frames.split("\n")[1:])))
-
-    return items
+frames_info = list_frames()

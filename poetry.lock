@@ -117,13 +117,13 @@ redis = ["limits[redis]"]
 
 [[package]]
 name = "golden-frame"
-version = "2.0.69"
+version = "2.1.70"
 description = "Golden Frame \"กรอบทอง\" Generator, Create Golden Frame for given images (Also supports other frame, included with selected quality frames)"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "golden_frame-2.0.69-py3-none-any.whl", hash = "sha256:8bfa75551727d195e83cc2e1150e0bce93378c5a80c1740e2ffcde6e9174034e"},
-    {file = "golden_frame-2.0.69.tar.gz", hash = "sha256:0b12c592a42ac0d5339b7b5e291ce66d0fea191ce429d191fdccff5ff298eb22"},
+    {file = "golden_frame-2.1.70-py3-none-any.whl", hash = "sha256:42c9af9508b64cbcbce70f946dc11d5702ff4bdbe9d7eff8a467cc9f46eb09d8"},
+    {file = "golden_frame-2.1.70.tar.gz", hash = "sha256:01c35a7af340917318fb35066058c6343bd767ba003c4789ef6522b4db9c3791"},
 ]
 
 [package.dependencies]
@@ -598,4 +598,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "5cf29d6fe9f387c909b3a996fd4dbbbbf20ad245cf056b6920b0d9c79a367197"
+content-hash = "a27ad30acf7ed0079dd9e14cd9949f207cd3cf78a16d5fd10508beb61a9d53fc"
