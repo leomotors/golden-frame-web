@@ -4,9 +4,8 @@ from flask import request, Response
 import cv2
 import numpy as np
 
-from app import app
+from app import app, limiter
 from lib import build_golden_frame, list_frame_json
-from env import PASSWORD
 
 
 @app.route("/", methods=["GET"])
@@ -24,15 +23,8 @@ ALLOWED_FILE_TYPES = set(
 
 
 @app.route("/", methods=["POST"])
+@limiter.limit("1/second")
 def handle_post():
-    if PASSWORD is None or len(PASSWORD) < 6:
-        return "Internal Server Error (Magic)", 500
-
-    # * Get password and confirm access
-    password = request.headers.get("Authorization")
-    if password != PASSWORD:
-        return "Unauthorized", 401
-
     # * Get files
     if "file" not in request.files:
         return "No file uploaded", 400

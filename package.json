@@ -12,8 +12,8 @@
     "astro": "astro",
     "lint": "prettier --check src && eslint src",
     "format": "prettier --write src && eslint src --fix",
-    "dev:server": "DEV=1 PASSWORD=localtest poetry run python3 server/server.py",
-    "preview:server": "PASSWORD=localtest poetry run python3 server/server.py"
+    "dev:server": "DEV=1 poetry run python3 server/server.py",
+    "preview:server": "poetry run python3 server/server.py"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
