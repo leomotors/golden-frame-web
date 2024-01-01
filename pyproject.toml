@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "golden-frame-web"
-version = "3.0.0"
+version = "3.1.0"
 description = "Golden Frame Generator Website"
 authors = [
   "Nutthapat Pongtanyavichai <59821765+Leomotors@users.noreply.github.com>",
