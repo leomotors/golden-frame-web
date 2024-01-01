@@ -50,3 +50,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  honami-gitops:
+    runs-on: ubuntu-latest
+    needs: docker-push
+
+    steps:
+      - name: Send Webhook
+        run: |
+          curl -X POST ${{ secrets.WEBHOOK_ENDPOINT }}/webhook/renovate \
+            -H "Authorization: ${{ secrets.WEBHOOK_PASSWORD }}"
