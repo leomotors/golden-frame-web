@@ -10,7 +10,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-golden-frame = "^2.1.70"
+golden-frame = "^2.1.71"
 Flask = "^3.0.0"
 waitress = "^2.1.2"
 flask-limiter = { extras = ["memcached"], version = "^3.5.0" }

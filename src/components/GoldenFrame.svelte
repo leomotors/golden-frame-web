@@ -3,6 +3,9 @@
 
   import clsx from "clsx/lite";
 
+  // @ts-ignore lazy to add typedef
+  import styles from "./GoldenFrame.module.scss";
+
   let selectedFrame = "golden_frame.png";
   $: currentInfo = frames.find((frame) => frame.name === selectedFrame);
 
@@ -54,16 +57,16 @@
   }
 </script>
 
-<div class="flex items-center justify-center gap-4">
-  <img class="max-w-xs" src="frames/{selectedFrame}" alt={currentInfo?.name} />
+<div class="{styles.gfPreview} flex items-center justify-center gap-4">
+  <img src="frames/{selectedFrame}" alt={currentInfo?.name} />
 
-  <p class="text-5xl font-bold">+</p>
+  <p>+</p>
 
-  <img class="max-w-xs" src={inputImage} alt="User Input" />
+  <img src={inputImage} alt="User Input" />
 
-  <p class="text-5xl font-bold">=</p>
+  <p>=</p>
 
-  <img class="max-w-xs" src={outputImage} alt="Generated Output" />
+  <img src={outputImage} alt="Generated Output" />
 </div>
 
 {#if errorMessage}
@@ -82,6 +85,7 @@
       id="frameName"
       class="rounded-md border border-gray-300 px-2 py-1"
       bind:value={selectedFrame}
+      on:change={() => (generateBtnEnabled = true)}
     >
       {#each frames as frame}
         <option value={frame.name}>{frame.name}</option>
@@ -89,7 +93,7 @@
     </select>
   </div>
 
-  <div class="mt-4 flex items-center justify-center">
+  <div class="mt-4 flex flex-col items-center justify-center sm:flex-row">
     <label for="inputImage" class="mr-2">Input Image:</label>
     <input
       type="file"

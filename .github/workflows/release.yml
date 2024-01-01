@@ -18,7 +18,7 @@ jobs:
         uses: leomotors/auto-publish-release@main
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.ref }}
+          tag: ${{ github.ref_name }}
           title: "Golden Frame Website"
 
   docker-push:

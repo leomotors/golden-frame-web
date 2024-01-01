@@ -1,0 +1,9 @@
+.gfPreview {
+  & > img {
+    @apply max-w-20 sm:max-w-32 md:max-w-48 xl:max-w-xs;
+  }
+
+  & > p {
+    @apply text-3xl font-bold sm:text-5xl;
+  }
+}

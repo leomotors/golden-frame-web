@@ -4,6 +4,13 @@ Live Demo for `pip install golden-frame`
 
 ![](./images/screenshot.png)
 
+## Stack
+
+Frontend: Astro + Svelte + TailwindCSS (Build Static)  
+Backend: Flask (Serve Frontend and API Path)
+
+Library: Golden Frame (https://pypi.org/project/golden-frame)
+
 ## Run your own
 
 ```
